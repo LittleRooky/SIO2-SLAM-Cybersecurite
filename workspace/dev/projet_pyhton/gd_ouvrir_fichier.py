@@ -22,8 +22,8 @@ repEntree = "/home/gd/Workspace/dev/SIO2-SLAM-Cybersecurite/workspace/database" 
 repSortie = "/home/gd/Workspace/dev/SIO2-SLAM-Cybersecurite/workspace/tmp" # Chemin du repertoire de sortie
 
 
-nom_fichier = 'agile.txt'
-#nom_fichier = 'dico_donnees.csv
+#nom_fichier = 'agile.txt'
+nom_fichier = 'villes_guadeloupe.csv'
 fichEntree = repEntree + '/' + nom_fichier # Chemin complet vers le fichier d'entree ('+' = concatenation de chaine)
 fichSortie = repSortie + '/' + nom_fichier + '.' + str(date) # Chemin complet vers le fichier de sortie
 

@@ -1,0 +1,188 @@
+# =============================================================================
+# LIENS INDISPENSABLES
+# =============================================================================
+
+> La CNIL
+
+https://www.cnil.fr/fr
+
+https://www.cnil.fr/fr/cybersecurite
+
+https://www.cnil.fr/fr/guide-rgpd-du-developpeur
+
+> L'ANSSI: (particulier et professionel) :
+
+https://www.ssi.gouv.fr/
+
+MOOC sur la cybersecurité :
+
+https://secnumacademie.gouv.fr/
+
+NB: Ces liens sont complémentaire aux documents "cyberedu"
+
+# =============================================================================
+# GESTIONNAIRE DE MOT DE PASSE
+# =============================================================================
+
+KeePass est un logiciel de gestion des mots de passe. Il permet de sauvegarder l'ensemble des
+mots de passe dans un fichier chiffré, accessible uniquement par le mot de passe principal.
+
+Avec ce logiciel, il est possible de respecter les préconisations de sécurité, en choisissant
+des mots de passe robustes, et des couples utilisateur/mot de passe uniques pour chaque site,
+puisque le logiciel les retiendra pour vous.
+
+##### [[ keepassxc ]] ######
+
+KeePassXC est un fork communautaire de KeePassX (KeePassX a débuté comme étant un portage sous Linux du logiciel Keepass) 
+faisant suite au développement très lent de KeePassX (la dernière version datant d'octobre 2016)
+et à l'absence de réponse de son mainteneur quant à une possible mise à jour.
+
+> Présentation de keepass :
+
+https://www.youtube.com/watch?v=XTnDKJl1zOQ
+
+> Installation de keepassxc:
+
+https://keepassxc.org/
+
+##### [[ keepassxc browser ]] #####
+
+keepassxc browser est une extention Firefox et Chrome permettant de s'abstenir
+de copier/coller l' ID/passwrd à chaque fois. Pour que keepassxc browser puisse fonctionner,
+il faut que l'application keepassxc soit lancée et la base de donnée dévérouillée avec le passwrd principal.
+
+> Pour Firefox:
+
+https://addons.mozilla.org/fr/firefox/addon/keepassxc-browser/
+
+> Pour Chrome:
+
+https://chrome.google.com/webstore/detail/keepassxc-browser/oboonakemofpalcgghocfoadofidjkkk
+
+> Pour Opera: 
+
+Pas trouvé
+
+
+# =============================================================================
+# Git / GitHub
+# =============================================================================
+
+#######################################
+# [[ 1- Installer Git ]]
+#######################################
+
+https://git-scm.com/downloads
+
+#######################################
+# [[ 2- Configuer Git ]]
+#######################################
+
+
+
+# >>> La première chose que vous devez faire lorsque vous installez Git est de 
+# définir votre nom d'utilisateur et votre adresse e-mail. Ceci est important
+# car chaque commit Git utilise ces informations, et elles sont immuablement 
+# intégrées aux commits que vous commencez à créer.
+
+git config --global user.name "John Doe"
+git config --global user.email johndoe@example.com
+
+# >>> Vous pouvez afficher tous vos paramètres et leur origine en utilisant
+
+git config --list --show-origin
+
+# >>> Si vous souhaitez utiliser un autre éditeur de texte, tel qu'Emacs, vous 
+# pouvez procéder comme suit 
+
+git config --global core.editor emacs
+
+# NB: Sur un système Windows, si vous souhaitez utiliser un autre éditeur de texte,
+# vous devez spécifier le chemin complet de son fichier exécutable. Cela peut
+# être différent selon la façon dont votre éditeur est emballé. 
+# ex :git config --global core.editor "'C:/Program Files/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin"
+
+# >>> Pour définir main comme nom de branche par défaut (*), procédez comme suit :
+
+git config --global init.defaultBranch main
+
+#######################################
+# [[ 3- Initialiser un projet Git ]]
+#######################################
+
+# >>> Créez votre répertoire projet
+
+mkdir mon_projet # ou en mode graphique sous windows
+
+# >>> La commande git init crée un nouveau dépôt Git. Elle permet de convertir un
+# projet existant, sans version en un dépôt Git ou d'initialiser un nouveau 
+# dépôt vide. La plupart des autres commandes Git ne sont pas disponibles hors
+# d'un dépôt initialisé, il s'agit donc généralement de la première commande 
+# que vous exécuterez dans un nouveau projet.
+
+git init
+
+# >>> ETAPE DE CONCEPTION 
+# 
+#   Ajoutez des fichiers
+#   Modifiez des fichers
+#   Développez / Codez
+#   ...
+#
+
+# >>> La commande git add permet d’ajouter dans la zone de transit les fichiers et dossiers à 
+# synchroniser
+
+git add .
+
+# >>> Enregistrez les modifications dans le dépôt local (crée une nouvelle version du projet)
+
+git commit -m 'initial commit of my project'
+
+
+#######################################
+# [[ 3- Travailler avec GitHub ]]
+#######################################
+
+# >>> 2 options : 
+
+# >>> opt A) Vous voulez récupérer en local le projet stocké dans un dépot GitHub distant :
+
+git clone https://github.com/<UN_NOM>/<NOM_REPO>.git
+
+# >>> opt B) Vous voulez créer un nouveau dépot GitHub distant avec le contenu d'un projet stocké en local :
+
+# 1. Créer un nouveau dépot (repository) sur votre espace personnel GitHub et 
+récupérer l'URL du projet: https://github.com/<VOTRE_NOM>/<NOM_REPO>.git
+
+# 2. Allez dans le répertoire local du projet ou créer un nouveau dossier :
+
+# 3. Initialisez le dossier et ajoutez vos fichiers :
+
+git init
+
+# ... ajouter/modifier des fichiers
+
+git add .
+
+git commit -m 'Premier Commit'
+
+# 4. Lancez la commande suivante, remplacez <username> par votre nom d'utilisateur GASPAR et <repository> par le nom de votre repository :
+
+git remote add origin https://github.com/970M/<nom_repo>.git
+
+# 5. Publiez les fichiers sur le serveur :
+
+git push -u origin master
+
+# Après cet import initial, il vous suffira de lancer la commande suivante pour publiez vos changements ultérieurs :
+
+git push
+
+# >>> Lorsque le dépot GitHut à été modifié et que vous voulez récupérer
+la nouvelle version du projet pour mettre à jour votre réperetoire local :
+
+git pull
+
+# NB : Il est donc recommandé de lancer une commande de mise à jour (git pull) à chaque fois que vous voulez
+travailler sur un projet

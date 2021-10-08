@@ -1,0 +1,24 @@
+nom;désignation;type;taille ;remarque
+id_professeur; n° qui rend le professeur unique;chaîne;15;n.°sécurité sociale
+nom_professeur;nom du professeur;chaîne;25;
+tel_professeur;n° de téléphone du professeur;entier;10;n°téléphone
+mdp_professeur;mot de passe de connexion du professeur;chaîne;15;
+id_responsable;n° qui rend unique le responsable;chaîne;15;n.°sécurité sociale
+nom_responsable;nom du responsable;chaîne;25;
+tel_responsable;n° de téléphone du responsable;entier;10;
+mdp_responsable;mot de passe du responsable;chaîne;15;
+id_equipement;n.° série de l’équipement;chaîne;10;
+nom_équipement;nom de l’équipement;chaîne;20;
+statut_équipement;occupé ou disponible;chaîne;10;
+etat_équipement;bon / moyen / mauvais/ non fonctionnel;chaîne;15;
+id_type;videoprojecteurs, rallonges,  ordinateurs;type;;
+libellé_type;;;;
+id_réservation;n° réservation;int;;
+date_enr_réservation;date d’enregistrement de la réservation;date;;
+date_réservation;date à laquelle le professeur souhaite réserver le ou les équipements;date;10;
+heure_enr_réservation;heure à laquelle le professeur à enregistrer sa réservation;temp;;
+heure_reception; ;time;5;heure de réception des 
+début_crénaux;;temp;2;1h
+fin_crénaux;;temp;;
+observation_professeur;;chaîne;150;
+observation_responsable;;chaîne;150;

@@ -161,19 +161,27 @@ récupérer l'URL du projet: https://github.com/<VOTRE_NOM>/<NOM_REPO>.git
 
 git init
 
-# ... ajouter/modifier des fichiers
+# 4. Ajouter/modifier des fichiers
+
+...
+
+# 5. Mettre vos modifications en zone d'index puis commit
 
 git add .
 
 git commit -m 'Premier Commit'
 
-# 4. Lancez la commande suivante, remplacez <username> par votre nom d'utilisateur GASPAR et <repository> par le nom de votre repository :
+# 6 Renomer (si ce n'est pas le cas) et se placer sur la branche "main"
 
-git remote add origin https://github.com/970M/<nom_repo>.git
+git branch -M main
 
-# 5. Publiez les fichiers sur le serveur :
+# 7. Lancez la commande suivante, remplacez <username> par votre nom d'utilisateur GASPAR et <repository> par le nom de votre repository :
 
-git push -u origin master
+git remote add origin https://github.com/<username>/<repository>.git
+
+# 8. Publiez les fichiers sur le serveur :
+
+git push -u origin main
 
 # Après cet import initial, il vous suffira de lancer la commande suivante pour publiez vos changements ultérieurs :
 

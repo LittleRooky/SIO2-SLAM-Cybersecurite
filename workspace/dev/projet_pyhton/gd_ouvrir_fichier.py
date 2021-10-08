@@ -17,15 +17,12 @@ dateISOFormat = datetime.datetime.now()
 date = dateISOFormat.isoformat(" ", "minutes")
 
 ### Configuration
-
 repEntree = "/home/gd/Workspace/dev/SIO2-SLAM-Cybersecurite/workspace/database" # Chemin du repertoire d'entree
 repSortie = "/home/gd/Workspace/dev/SIO2-SLAM-Cybersecurite/workspace/tmp" # Chemin du repertoire de sortie
-
-
 #nom_fichier = 'agile.txt'
 nom_fichier = 'villes_guadeloupe.csv'
 fichEntree = repEntree + '/' + nom_fichier # Chemin complet vers le fichier d'entree ('+' = concatenation de chaine)
-fichSortie = repSortie + '/' + nom_fichier + '.' + str(date) # Chemin complet vers le fichier de sortie
+fichSortie = repSortie + '/' + nom_fichier + '.' + date # Chemin complet vers le fichier de sortie
 
 # =============================================================================
 # Declaration des fonctions
@@ -44,7 +41,6 @@ def ouvir_fichier_read(fichier):
  
     return strFichier           # Retourne la variable de type chaine de caratere (string) contenant le
 
-
 ### Methode 1bis (pour info) avec read :  Fichier ==> chaine de caractere (string)
 def ouvir_fichier_read_bis(fichier):
     """
@@ -57,7 +53,6 @@ def ouvir_fichier_read_bis(fichier):
 
     return strFichier                  # Retourne la variable de type chaine de caratere (string) contenant le
 
-
 ### Methode 2 (pour info) avec readline : Fichier ==> ligne par ligne dans une chaine de caractere
 def ouvir_fichier_readline(fichier):
     """
@@ -69,7 +64,6 @@ def ouvir_fichier_readline(fichier):
             strLigne = filin.readline() # Recuperer la ligne courante du ficher et on la stock dans strLigne
     
     # return strLigne                   # Le return ici n'est pas trés utile car strLigne ne contient que ""
-
 
 ### Methode 2bis avec readline : Fichier ==> chaque ligne du ficher dans une colonne de tableau (liste)
 def ouvir_fichier_readline_tab(fichier):
@@ -95,8 +89,6 @@ def ouvir_fichier_readlines(fichier):
 
     return strFichier
 
-
-
 ##############################################################################
 # MAIN : Partie principal du programme
 ##############################################################################
@@ -118,7 +110,7 @@ print(fichier_liste)
 print("type de la variable :", type(fichier_liste))
 
 ### READLINES
-print("\nMethode 3 avec readline :\n")
+print("\nMethode 3 avec readlines :\n")
 fichier_liste2 = ouvir_fichier_readlines(fichEntree)
 print(fichier_liste2)
 print("type de la variable :", type(fichier_liste2))

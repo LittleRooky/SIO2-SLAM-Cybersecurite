@@ -31,7 +31,7 @@ import datetime
 
 ### Recuperer la date courante
 dateISOFormat = datetime.datetime.now()
-date = dateISOFormat.isoformat(" ", "minutes")
+date = dateISOFormat.isoformat("-", "minutes")
 
 ### Configuration
 repEntree = "/home/gyom/GD_W®12x/gd_workspace/dev/repositories/SIO2-SLAM-Cybersecurite/workspace/database" # Chemin du repertoire d'entree

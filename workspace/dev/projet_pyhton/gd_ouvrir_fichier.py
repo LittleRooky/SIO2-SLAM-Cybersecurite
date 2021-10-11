@@ -48,7 +48,6 @@ fichSortie = repSortie + '/' + nom_fichier + '.' + date # Chemin complet vers le
 # DECLARATION DES FONCTIONS
 # =============================================================================
 
-
 # >>> [[ Ouvrir un fichier en lecture ]]
 
 ### Methode 1 avec read : Fichier ==> chaine de caractere
@@ -141,7 +140,7 @@ def ouvir_fichier_readlines(fichier):
 
 # >>> [[ Ouvrir un fichier en écriture ]]
 
-### Ouvrir un fichier en écriture (WRITE)
+### Ecrire avec la méthode write
 def ouvir_fichier_write(fichier): # Ouvrir le fichier en écriture, filout est un descripteur de fichier (filout pour les fichier de sortie)
     """
     Ouvir le fichier en écriture et ajouter du texte dedans

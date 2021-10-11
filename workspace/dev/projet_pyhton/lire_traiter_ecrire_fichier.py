@@ -34,8 +34,8 @@ dateISOFormat = datetime.datetime.now()
 date = dateISOFormat.isoformat(" ", "minutes")
 
 ### Configuration
-repEntree = "/home/gyom/GD_W012X/gd_workspace/dev/repositories/SIO2-SLAM-Cybersecurite/workspace/database" # Chemin du repertoire d'entree
-repSortie = "/home/gyom/GD_W012X/gd_workspace/dev/repositories/SIO2-SLAM-Cybersecurite/workspace/tmp" # Chemin du repertoire de sortie
+repEntree = "/home/gyom/GD_W®12x/gd_workspace/dev/repositories/SIO2-SLAM-Cybersecurite/workspace/database" # Chemin du repertoire d'entree
+repSortie = "/home/gyom/GD_W®12x/gd_workspace/dev/repositories/SIO2-SLAM-Cybersecurite/workspace/tmp" # Chemin du repertoire de sortie
 #nom_fichier = 'agile.txt'
 nom_fichier = 'villes_guadeloupe.csv'
 fichEntree = repEntree + '/' + nom_fichier # Chemin complet vers le fichier d'entree ('+' = concatenation de chaine)

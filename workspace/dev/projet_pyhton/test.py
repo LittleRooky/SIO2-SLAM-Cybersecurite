@@ -1,70 +1,57 @@
-#!/usr/bin/python3
-
-import csv
-
-
 import datetime
+
+### Recuperer la date courante
 dateISOFormat = datetime.datetime.now()
-date = dateISOFormat.isoformat(" ", "minutes")
-print(date)
+date = dateISOFormat.isoformat("-", "minutes")
 
-#chemin_rep = "../../database"
-repEntree = "/home/gd/Workspace/dev/SIO2-SLAM-Cybersecurite/workspace/database"
-repSortie = "/home/gd/Workspace/dev/SIO2-SLAM-Cybersecurite/workspace/tmp"
+### Configuration
+repEntree = "workspace/database" # Chemin du repertoire d'entree
+repSortie = "workspace/tmp" # Chemin du repertoire de sortie
 
-nom_fichier = 'liste_eleves.csv'
-#nom_fichier = 'dico_donnees.csv'
-
-fichEntree = repEntree + '/' + nom_fichier
-fichSortie = repSortie + '/' + nom_fichier + '.' + str(date)
-
-print(fichEntree)
-print(fichSortie)
+#nom_fichier = 'agile.txt'
+nom_fichier = 'villes_guadeloupe.csv'
+fichEntree = repEntree + '/' + nom_fichier # Chemin complet vers le fichier d'entree ('+' = concatenation de chaine)
+fichSortie = repSortie + '/' + nom_fichier + '.txt' # Chemin complet vers le fichier de sortie
 
 
-# # 1 #### Chaine de caractere (string)
-# filin = open(fichier_entree, 'r')
-# contenu = filin.read()
-# filin.close()
-# #print(type(contenu))
+# =============================================================================
+# DECLARATION DES FONCTIONS
+# =============================================================================
 
-# # 2 #### Readline => Ligne par ligne du fichier dans une chaine de caractere (string)
-# with open(fichier_entree, "r") as filin:
-#     ligne = filin.readline()
-#     while ligne != "":
-#         #print(ligne)
-#         #print(type(ligne))
-#         ligne = filin.readline()
-# #print(type(ligne))
+def lire_traiter_ecrire_fichier(fEntree, fSortie):
+    """
+    Ouvir le fichier fichEntree, le parcourir ligne par ligne, effectuer un traitement sur le contenu de 
+    la ligne courante puis écrire le résultat dans le fichier de sortie fichSortie
+    """
 
-# 3 #### Readlines => Tout le fichier dans une liste
-with open(fichEntree, 'r') as filin:
-    contenu2 = filin.readlines()
+    # test = open((fSortie+'.txt'), "x")
+    # test2 = open(fEntree, "r")
+    # print(test2.readline())
+    # test.write('tzqt s  s')
+    # test.close()
 
-print(len(contenu2))
-print("Avant", contenu2)
-
-
-with open(fichSortie, 'w') as filout:
-
-    for i in range(len(contenu2)):
-        nligne = contenu2[i].replace('\n', '').replace('" ', '"').replace(' "', '"').lower()
-        contenu2[i] = nligne
-        filout.write(nligne + '\n')
-
-
-print("Apres", contenu2)
-
-
-print("ouverture fichier")
-
-try:
-    filin=open(fichSortie, "r")
-    print("ouverture csv")
-except:
-    print("Le fichier", fichSortie, "est introuvable")
+    with open(fSortie, "w") as filout: # Ouvir le fichier de sortie en écriture
         
-tableData=list(csv.reader(filin,delimiter=";"))
+        with open(fEntree, "r") as filin:  # Ouvrir le fichier d'entrée en lecture
+            
+            strLigne = filin.readline()  # La méthode readline() lis la premiere ligne du fichier et fait pointer filin sur la ligne suivante 
+            
+            # TRAITEMENT A FAIRE (initialisation avant le while) :
+            strNewLigne  = strLigne # Remplacer des carateres et mettre en minuscule
+            filout.write(strNewLigne) # Ecrire la ligne traitée dans le fichier de sortie
 
-print(tableData)
-print(len(tableData[0]))
+            while strLigne != "": # Boucler tant que filin n'a pas atteind la fin du fichier (dans ce cas strLigne == "")
+       
+                strLigne = filin.readline() # Recuperer la ligne courante du ficher et on la stack dans strLigne
+                    
+                # TRAITEMENT A FAIRE à chaque itération :
+                tabNewLigne  = strLigne.split(';') # Remplacer des carateres et mettre en minuscule
+                if tabNewLigne != ['']:
+                    print(tabNewLigne[2] + ' | ' + tabNewLigne[5])
+                    filout.write(tabNewLigne[2] + ' | ' + tabNewLigne[5] + '\n') # Ecrire la ligne traitée dans le fichier de sortie
+    
+    # return foo # Suivant le traitement on mettra ou non un return
+
+
+lire_traiter_ecrire_fichier(fichEntree, fichSortie)
+# print("\nfichier généré : \n", fichSortie)
